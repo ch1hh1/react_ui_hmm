@@ -1,16 +1,24 @@
 export default function Home() {
   const path = require('path')
   const fs = require('fs');
+  // テキストファイル名一覧の取得
   const pagetxtPath: string = path.join(__dirname, '../../../public/pagetxt')
-  const files: string[] = fs.readdirSync(pagetxtPath);
+  const fileNames: string[] = fs.readdirSync(pagetxtPath);
+
+  // 任意の1ファイルの取得
+  const file: string = fs.readFileSync(`${pagetxtPath}/${fileNames[0]}`, 'utf8');
+
+  const aaa = file.replace(/\n/g, '●');
+  const bbb = aaa.split('●');
   return (
     <div>
       <h1>みだし</h1>
-      <p>{files.join(' ')}</p>
-      <p>publicフォルダ内のファイル名を取得したので</p>
-      <p>ファイル名からファイルの中身を読んで</p>
-      <p>いい感じに表示するコンポーネントを作る</p>
-      <p>適当に枠つけて繰り返す</p>
+      <h2>{fileNames[0]}</h2>
+      <p>{fileNames.join(' ')}</p>
+      <p>*{bbb[0]}</p>
+      <p>*{bbb[1]}</p>
+      <p>*{bbb[2]}</p>
+      <p>*{bbb[3]}</p>
     </div>
   );
 }
