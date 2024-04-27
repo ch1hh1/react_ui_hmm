@@ -1,5 +1,5 @@
 import React from 'react'
-import TextSnippet from './TextSnippet';
+import TextSnippet from '../../components/TextSnippet';
 
 const snippetPageStyle: React.CSSProperties = {
   width: '80%',
@@ -17,7 +17,7 @@ const TextSnippetPage: React.FC = () => {
   const path = require('path')
   const fs = require('fs');
   // テキストファイル名一覧の取得
-  const pagetxtPath: string = path.join(__dirname, '../../../public/pagetxt')
+  const pagetxtPath: string = path.join(__dirname, '../../../../public/pagetxt')
   const fileNames: string[] = fs.readdirSync(pagetxtPath);
 
   // ファイル名をランダムに並び替え
