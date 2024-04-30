@@ -1,5 +1,6 @@
 import React from 'react'
-import TextSnippet from '../../components/TextSnippet';
+import TextSnippet from './TextSnippet';
+import Link from 'next/link';
 
 const snippetPageStyle: React.CSSProperties = {
   width: '80%',
@@ -13,6 +14,9 @@ const shuffleArray = (array: string[]) => {
   return array.slice().sort(() => Math.random() - Math.random())
 }
 
+/**
+ * テキストスニペット一覧ページ
+ */
 const TextSnippetPage: React.FC = () => {
   const path = require('path')
   const fs = require('fs');
@@ -33,6 +37,7 @@ const TextSnippetPage: React.FC = () => {
   return (
     <div style={snippetPageStyle}>
       {textSnippets}
+      <Link href='../'>トップ</Link>
     </div>
   )
 }
