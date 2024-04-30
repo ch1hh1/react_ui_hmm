@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../style/scrollbar.module.scss';
+import styles from '../../../style/scrollbar.module.scss';
 
 type TextSnippetProps = {
   file: string
