@@ -1,6 +1,7 @@
 import React from 'react'
 import TextSnippet from './TextSnippet';
 import Link from 'next/link';
+import Header from '@/common/Header';
 
 const snippetPageStyle: React.CSSProperties = {
   width: '80%',
@@ -34,11 +35,15 @@ const TextSnippetPage: React.FC = () => {
     key++;
     return <TextSnippet file={file} key={key} />
   })
+
+  // ページ描画内容
   return (
-    <div style={snippetPageStyle}>
-      {textSnippets}
-      <Link href='../'>トップ</Link>
-    </div>
+    <>
+      <Header />
+      <div style={snippetPageStyle}>
+        {textSnippets}
+      </div>
+    </>
   )
 }
 
